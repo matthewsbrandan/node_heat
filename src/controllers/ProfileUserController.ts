@@ -8,7 +8,7 @@ class ProfileUserController{
   async handle(request: IRequestAuth, response: Response){
     const { user_id } = request;
     const service = new ProfileUserService();
-    const result = service.execute(user_id);
+    const result = await service.execute(user_id);
 
     response.json(result);
   }
